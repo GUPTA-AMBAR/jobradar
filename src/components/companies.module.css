@@ -1,0 +1,24 @@
+.all{
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    grid-template-rows: repeat(3, 3fr);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px; 
+}
+
+
+
+.card{
+    width: 300px;
+    display: flex;
+    margin-left: 130px;
+    margin-top: 55px;
+    background: linear-gradient(135deg, #17e621 0%, #fda085 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(244, 2, 2, 0.2);
+    color: rgb(60, 22, 25);
+}
+.card:hover{
+    transform: scale(1.14);
+  }
