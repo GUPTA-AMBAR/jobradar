@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { Children, createContext, useState } from 'react';
 
 
 
@@ -96,6 +96,23 @@ const [home,setHome]=useState(false);
     </HomeContext.Provider>
   )
 };
+
+
+//handle jobs
+export const JobContext = createContext(null);
+export const UseJobsProvier =({children})=>{
+const [job, setJob]=useState(false);
+
+const handleJob =()=>{
+  setJob();
+}
+
+return (
+  <JobContext.Provider  value={{job, handleJob}}>
+    {children}
+  </JobContext.Provider>
+)
+}
 
 
 

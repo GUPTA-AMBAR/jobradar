@@ -9,10 +9,12 @@ import {
   UseCompaniesProvider, 
   UseForgetProvider, 
   UseHomeProvider, 
+  UseJobsProvier, 
   UseLoginProvider, 
   UseSignupProvider 
 } from '../store/store';
 import Home from './components/home';
+import Jobs from './components/jobs';
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
         <UseSignupProvider>
           <UseForgetProvider>
             <UseCompaniesProvider>
+              <UseJobsProvier>
               <BrowserRouter>
                 <Routes>
                   <Route path="/" element={<Layout />}>
@@ -29,9 +32,11 @@ function App() {
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/forget" element={<ForgetPassword />} />
                     <Route path="/company" element={<Companies />} />
+                    <Route path="/jobs" element={<Jobs/>} />
                   </Route>
                 </Routes>
               </BrowserRouter>
+              </UseJobsProvier>
             </UseCompaniesProvider>
           </UseForgetProvider>
         </UseSignupProvider>

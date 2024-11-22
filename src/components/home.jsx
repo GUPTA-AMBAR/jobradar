@@ -1,5 +1,5 @@
 import React from 'react';
-import dreamjob   from './images/jobdream.jpg';
+import dreamjob   from './images/dreamjob.jpg';
 import styles from "./companies.module.css";
 import amazon   from './images/amazon.png';
 import glandpharma from './images/glandpharma.gif';
@@ -165,33 +165,6 @@ const Home = () => {
 
 
 
-
-        {/* <section>
-          <h1 className="text-3xl font-bold text-gray-600 mb-10">
-            <b>Popular Companies</b>
-          </h1>
-          <div className="grid sm:grid-cols-3 gap-4 grid-cols-2">
-            <div>
-              <div className="bg-gray-300 h-44"></div>
-              <h3 className="text-lg font-semibold text-gray-500 mt-2">
-                Saunas in <span className="text-gray-700">Helsinki</span>
-              </h3>
-            </div>
-            <div>
-              <div className="bg-gray-300 h-44"></div>
-              <h3 className="text-lg font-semibold text-gray-500 mt-2">
-                Saunas in <span className="text-gray-700">Rovaniemi</span>
-              </h3>
-            </div>
-            <div>
-              <div className="bg-gray-300 h-44"></div>
-              <h3 className="text-lg font-semibold text-gray-500 mt-2">
-                Saunas in <span className="text-gray-700">Ruka</span>
-              </h3>
-            </div>
-          </div>
-          <hr className="w-40 my-14 border-4 rounded-md sm:mx-0 mx-auto" />
-        </section> */}
         <section>
           <center><h1 className="inline-block text-gray-600 font-bold text-3xl">
             <br />

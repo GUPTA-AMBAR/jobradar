@@ -9,7 +9,7 @@ import { GrLogin } from "react-icons/gr";
 import { FaSignInAlt } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
-import { CompaniesContext, HomeContext, LoginContext, SignupContext } from '../../store/store';
+import { CompaniesContext, HomeContext, LoginContext, SignupContext,JobContext } from '../../store/store';
 
 const Frontend = ({ children }) => {
   const { handleSignup } = useContext(SignupContext);
@@ -44,6 +44,14 @@ const Frontend = ({ children }) => {
     navigate4('/');
   }
 
+  const {handleJob} = useContext(JobContext);
+  const navigate5 = useNavigate();
+
+  const handleOnJob=()=>{
+    handleJob();
+    navigate5('/jobs');
+  }
+
 
   
 
@@ -60,7 +68,7 @@ const Frontend = ({ children }) => {
           <img src={jobradar} style={{ borderRadius: "6px", height: "40px" }} alt="Job Radar" />
         </center>
         <div className="flex items-center space-x-4">
-          <form className="d-flex" role="search">
+          {/* <form className="d-flex" role="search">
             <input
               className="form-control me-3"
               type="search"
@@ -75,7 +83,7 @@ const Frontend = ({ children }) => {
             >
               Search
             </button>
-          </form>
+          </form> */}
         </div>
       </nav>
 
@@ -96,7 +104,7 @@ const Frontend = ({ children }) => {
 
               <li>
                 <div className="flex items-center justify-between p-2 hover:bg-gray-700 cursor-pointer">
-                  <div className="flex items-center">
+                  <div className="flex items-center" onClick={handleOnJob}>
                     <TbZoomScanFilled style={{ marginRight: "7px" }} />
                     <span>Jobs</span>
                   </div>
