@@ -1,16 +1,39 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaTwitter } from "react-icons/fa";
-import { FaMeta } from "react-icons/fa6";
+import { TfiEmail } from "react-icons/tfi";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
-import { IoLogoDribbble } from "react-icons/io5";
+import { ContactContext, LoginContext, TermContext } from "../../store/store";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+
+  const {handleContact}=useContext(ContactContext);
+  const navigate1=useNavigate();
+  const handleOnContact =()=>{
+    handleContact();
+    navigate1('/contact');
+  }
+
+  const {handleLogin}=useContext(LoginContext);
+  const navigate2=useNavigate();
+  const handleOnLogin =()=>{
+    handleLogin();
+    navigate2('/login');
+  }
+
+  const {handleTerm}=useContext(TermContext);
+  const navigate3=useNavigate();
+  const handleOnTerm =()=>{
+    handleTerm();
+    navigate3('/term');
+  }
+
   return (
-    <section className="bg-white" style={{background:"yellow"}}>
+    <section className="bg-white" style={{background:"	#20263e"}}>
       <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
         <nav className="flex flex-wrap justify-center -mx-5 -my-2">
-          {["About", "Blog", "Team", "Pricing", "Contact", "Terms"].map((item) => (
+          {[<p>About</p>, <p onClick={handleOnLogin}>login</p>,<p onClick={handleOnContact}>Contact</p>, <p onClick={handleOnTerm}>Terms</p>].map((item) => (
             <div key={item} className="px-5 py-2">
               <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
                 {item}
@@ -20,11 +43,10 @@ const Footer = () => {
         </nav>
         <div className="flex justify-center mt-8 space-x-6">
           {[
-            { name: "Facebook", icon: <FaMeta /> },
-            { name: "Instagram", icon: <FaSquareInstagram /> },
-            { name: "Twitter", icon: <FaTwitter /> },
-            { name: "GitHub", icon: <FaGithub /> },
-            { name: "Dribbble", icon: <IoLogoDribbble /> },
+            { name: "Facebook", icon: <a href="https://mail.google.com/mail/u/0/?hl=en#inbox?compose=new"><TfiEmail /></a> },
+            { name: "Instagram", icon: <a href="https://www.instagram.com/ambar_29_08/"><FaSquareInstagram /></a> },
+            { name: "Twitter", icon: <a href="https://x.com/home"><FaTwitter /></a> },
+            { name: "GitHub", icon: <a href="https://github.com/GUPTA-AMBAR"><FaGithub /></a> },
           ].map((social) => (
             <a key={social.name} href="#" className="text-gray-400 hover:text-gray-500">
               <span className="sr-only">{social.name}</span>
