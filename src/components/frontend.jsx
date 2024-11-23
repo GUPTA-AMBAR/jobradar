@@ -9,7 +9,7 @@ import { GrLogin } from "react-icons/gr";
 import { FaSignInAlt } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
-import { CompaniesContext, HomeContext, LoginContext, SignupContext,JobContext } from '../../store/store';
+import { CompaniesContext, HomeContext, LoginContext, SignupContext,JobContext, ContactContext, } from '../../store/store';
 
 const Frontend = ({ children }) => {
   const { handleSignup } = useContext(SignupContext);
@@ -53,6 +53,17 @@ const Frontend = ({ children }) => {
   }
 
 
+  const {handleContact} = useContext(ContactContext);
+  const navigate6 = useNavigate();
+
+  const handleOnContact=()=>{
+    handleContact();
+    navigate6('/contact');
+  }
+
+
+
+
   
 
   const [isProfileHovered, setIsProfileHovered] = useState(false);
@@ -68,22 +79,7 @@ const Frontend = ({ children }) => {
           <img src={jobradar} style={{ borderRadius: "6px", height: "40px" }} alt="Job Radar" />
         </center>
         <div className="flex items-center space-x-4">
-          {/* <form className="d-flex" role="search">
-            <input
-              className="form-control me-3"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              style={{ borderRadius: "6px" }}
-            />
-            <button
-              className="btn btn-outline-success"
-              type="submit"
-              style={{ background: "yellow", borderRadius: "6px" }}
-            >
-              Search
-            </button>
-          </form> */}
+          
         </div>
       </nav>
 
@@ -112,9 +108,9 @@ const Frontend = ({ children }) => {
               </li>
               <li>
                 <div className="flex items-center justify-between p-2 hover:bg-gray-700 cursor-pointer">
-                  <div className="flex items-center">
+                  <div className="flex items-center" onClick={handleOnContact}>
                     <MdPreview style={{ marginRight: "7px" }} />
-                    <span>Reviews</span>
+                    <span>Contact</span>
                   </div>
                 </div>
               </li>
