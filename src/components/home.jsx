@@ -13,7 +13,7 @@ import Footer from './footer';
 const Home = () => {
   return (
     <>
-    
+    <div>hello</div>
     <body className="bg-white">
       <header>
         <nav className="p-6">
